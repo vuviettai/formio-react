@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  formio-react:
+    image: node:16.20.2-alpine3.17
+    container_name: formio-react
+    restart: always
+    volumes:
+      - ./:/formio-react:rw
+    working_dir: /client
+    command: sleep infinity
+    #entrypoint: ["npm", "run", "dev"]
+    env_file:
+      - .env
+    tty: true
